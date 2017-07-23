@@ -1,12 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace features_app.Features.Home
+namespace KickSharp.Features.Home
 {
-    public class HomeController : Microsoft.AspNetCore.Mvc.Controller
+    public class Controller : Microsoft.AspNetCore.Mvc.Controller
     {
+        [Route("")]
         public IActionResult Index()
         {
-            var model = new ViewModel()
+            var model = new Model()
             {
                 Title = "Oh boy.",
                 Subtitle = "I did it!"

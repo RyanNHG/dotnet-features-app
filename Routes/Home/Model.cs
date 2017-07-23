@@ -1,6 +1,6 @@
-namespace features_app.Features.Home
+namespace KickSharp.Features.Home
 {
-    public class ViewModel
+    public class Model
     {
         public string Title {get; set;}
         public string Subtitle {get; set;}

@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace features_app
+namespace KickSharp
 {
     public class Program
     {

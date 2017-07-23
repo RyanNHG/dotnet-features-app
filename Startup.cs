@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace features_app
+namespace KickSharp
 {
     public class Startup
     {
@@ -31,19 +31,9 @@ namespace features_app
                 {
                     // {0} - Action Name
                     // {1} - Controller Name
-                    // {2} - Area Name
                     // {3} - Feature Name
-                    options.AreaViewLocationFormats.Clear();
-                    options.AreaViewLocationFormats.Add("/Areas/{2}/Features/{3}/{1}/{0}.cshtml");
-                    options.AreaViewLocationFormats.Add("/Areas/{2}/Features/{3}/{0}.cshtml");
-                    options.AreaViewLocationFormats.Add("/Areas/{2}/Features/Shared/{0}.cshtml");
-                    options.AreaViewLocationFormats.Add("/Areas/Shared/{0}.cshtml");
-
-                    // replace normal view location entirely
                     options.ViewLocationFormats.Clear();
-                    options.ViewLocationFormats.Add("/Features/{3}/{1}/{0}.cshtml");
-                    options.ViewLocationFormats.Add("/Features/{3}/{0}.cshtml");
-                    options.ViewLocationFormats.Add("/Features/Shared/{0}.cshtml");
+                    options.ViewLocationFormats.Add("/Routes/{3}/View.cshtml");
 
                     options.ViewLocationExpanders.Add(new FeatureViewLocationExpander());
                 });
@@ -67,13 +57,7 @@ namespace features_app
 
             app.UseStaticFiles();
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}"
-                );
-            });
+            app.UseMvc();
 
         }
     }
