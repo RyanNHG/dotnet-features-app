@@ -11,7 +11,7 @@ namespace KickSharp
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
-                .UseStartup<Startup>()
+                .UseStartup<KickSharp.Config.Startup>()
                 .Build();
 
             host.Run();
