@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace KickSharp.Config
 {
-public class FeatureViewLocationExpander : IViewLocationExpander
+    public class FeatureViewLocationExpander : IViewLocationExpander
     {
         public IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context, IEnumerable<string> viewLocations)
         {
@@ -20,7 +20,7 @@ public class FeatureViewLocationExpander : IViewLocationExpander
             }
 
             var controllerActionDescriptor = context.ActionContext.ActionDescriptor as ControllerActionDescriptor;
-            
+
             if (controllerActionDescriptor == null)
             {
                 throw new NullReferenceException("ControllerActionDescriptor cannot be null.");
