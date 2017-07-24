@@ -1,3 +1,4 @@
-# .NET Core
-obj
-bin
+obj/
+bin/
+wwwroot/
+node_modules/

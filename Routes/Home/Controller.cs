@@ -9,8 +9,8 @@ namespace KickSharp.Routes.Home
         {
             var model = new Model()
             {
-                Title = "Oh boy.",
-                Subtitle = "I did it!"
+                Title = "This is the homepage!",
+                Subtitle = "You did it!"
             };
 
             return View(model);
