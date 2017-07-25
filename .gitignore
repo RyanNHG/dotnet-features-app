@@ -1,5 +1,4 @@
 .vscode/
 obj/
 bin/
-wwwroot/
 node_modules/
