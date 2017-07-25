@@ -6,7 +6,7 @@ namespace KickSharp.Routes.Home
     {
         public IActionResult Index()
         {
-            var model = new Model()
+            var model = new ViewModel()
             {
                 Title = "This is the homepage!",
                 Subtitle = "You did it!"

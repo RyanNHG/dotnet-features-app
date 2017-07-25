@@ -6,7 +6,7 @@ namespace KickSharp.Routes.About
     {
         public IActionResult Index()
         {
-            var model = new Model()
+            var model = new ViewModel()
             {
                 Title = "About Us",
                 Intro = "There's a lot about us!"
