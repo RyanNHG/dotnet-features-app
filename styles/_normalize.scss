@@ -1,0 +1,44 @@
+html, body {
+    height: 100%;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+}
+a, li {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, ul, p {
+    margin: 0;
+    padding: 0;
+}
+
+a, a[href] {
+    color: inherit;
+}
+
+a, a[href], button {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+:focus {
+    outline: none;
+}
+
+button {
+    color: inherit;
+    background: none;
+    border: solid 1px;
+    &:active {
+        border-style: solid;
+    }
+}

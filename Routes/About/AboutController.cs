@@ -2,9 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KickSharp.Routes.About
 {
-    public class Controller : Microsoft.AspNetCore.Mvc.Controller
+    public class AboutController : Microsoft.AspNetCore.Mvc.Controller
     {
-        [Route("about-us")]
         public IActionResult Index()
         {
             var model = new Model()

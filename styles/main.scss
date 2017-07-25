@@ -1,8 +1,5 @@
-html, body {
-    height: 100%;
-    font-family: Arial;
-}
+@import 'variables/_manifest';
+@import 'mixins/_manifest';
 
-body, h1, h2 {
-    margin: 0;
-}
+@import 'normalize';
+@import 'blocks/_manifest';

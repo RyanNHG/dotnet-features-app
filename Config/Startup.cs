@@ -26,18 +26,19 @@ namespace KickSharp.Config
         public void ConfigureServices(IServiceCollection services)
         {
             services
+                .AddRouting( options => options.LowercaseUrls = true )
                 .AddMvc( options => options.Conventions.Add(new FeatureConvention()))
                 .AddRazorOptions( options => 
                 {
                     // {0} - Action Name
                     // {1} - Controller Name
+                    // {2} - Area Name
                     // {3} - Feature Name
                     options.ViewLocationFormats.Clear();
                     options.ViewLocationFormats.Add("/Routes/{3}/View.cshtml");
 
                     options.ViewLocationExpanders.Add(new FeatureViewLocationExpander());
                 });
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,8 +57,7 @@ namespace KickSharp.Config
             }
 
             app.UseStaticFiles();
-
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
 
         }
     }

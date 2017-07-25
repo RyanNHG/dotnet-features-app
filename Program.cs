@@ -10,8 +10,7 @@ namespace KickSharp
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseUrls("http://*:5000")
-                .UseIISIntegration()
+                .UseUrls("http://0.0.0.0:5000")
                 .UseStartup<KickSharp.Config.Startup>()
                 .Build();
 
