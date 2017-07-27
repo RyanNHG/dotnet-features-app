@@ -35,7 +35,9 @@ namespace KickSharp.Config
                     // {2} - Area Name
                     // {3} - Feature Name
                     options.ViewLocationFormats.Clear();
-                    options.ViewLocationFormats.Add("/Routes/{3}/View.cshtml");
+                    options.ViewLocationFormats.Add("/Web/Views/{3}/View.cshtml");
+                    options.ViewLocationFormats.Add("/Web/Views/{3}/{0}/View.cshtml");
+                    options.ViewLocationFormats.Add("/Web/Views/{3}/{0}.cshtml");
 
                     options.ViewLocationExpanders.Add(new FeatureViewLocationExpander());
                 });
