@@ -32,6 +32,7 @@
 The architecture was mainly inspired by Microsoft's [MVC Guide](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview) with the addition of [Feature Slices](https://msdn.microsoft.com/en-us/magazine/mt763233.aspx) to make the application's structure less frustrating.
 
 Essentially our solution is broken up into three layers:
+![Architecture](https://raw.githubusercontent.com/RyanNHG/dotnet-features-app/master/architecture.png)
 
 #### 1. Web Layer
 
