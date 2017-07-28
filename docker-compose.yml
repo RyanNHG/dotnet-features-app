@@ -12,7 +12,7 @@ services:
       - ./project.csproj:/usr/src/app/project.csproj
       - ./Program.cs:/usr/src/app/Program.cs
       - ./Config:/usr/src/app/Config
-      - ./Routes:/usr/src/app/Routes
+      - ./Web:/usr/src/app/Web
       - ./wwwroot:/usr/src/app/wwwroot
   builder:
     build:
@@ -21,6 +21,6 @@ services:
     volumes:
       - ./package.json:/usr/src/app/package.json
       - ./gulpfile.js:/usr/src/app/gulpfile.js
-      - ./Routes:/usr/src/app/Routes
+      - ./Web:/usr/src/app/Web
       - ./styles:/usr/src/app/styles
       - ./wwwroot:/usr/src/app/wwwroot
