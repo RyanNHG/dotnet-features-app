@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Kicksharp.Views.Home
+namespace Kicksharp.Web.Views.Home
 {
     public class ViewModel
     {

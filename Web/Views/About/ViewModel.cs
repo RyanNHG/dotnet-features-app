@@ -1,4 +1,4 @@
-namespace Kicksharp.Views.About
+namespace Kicksharp.Web.Views.About
 {
     public class ViewModel
     {

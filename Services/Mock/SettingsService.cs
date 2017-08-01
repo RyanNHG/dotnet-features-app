@@ -1,5 +1,5 @@
 using Kicksharp.Services;
-using Home = Kicksharp.Views.Home;
+using Home = Kicksharp.Web.Views.Home;
 
 namespace Kicksharp.Services.Mock
 {
