@@ -11,6 +11,7 @@ namespace Kicksharp.Views.Home
         {
             this.settingsService = settingsService;
         }
+        
         public IActionResult Index()
         {
             var model = this.settingsService.GetHomepage();

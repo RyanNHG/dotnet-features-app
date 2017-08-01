@@ -2,14 +2,14 @@ using System.Collections.Generic;
 
 namespace Kicksharp.Views.Home
 {
-    public struct ViewModel
+    public class ViewModel
     {
         public HeaderSection HeaderSection { get; set; }
         public IntroSection IntroSection { get; set; }
         public LinksSection LinksSection { get; set; }
     }
 
-    public struct HeaderSection
+    public class HeaderSection
     {
         public string ImageStyles { get; set; }
         public string Title { get; set; }
@@ -17,20 +17,20 @@ namespace Kicksharp.Views.Home
         public string CtaLabel { get; set; }
     }
 
-    public struct IntroSection
+    public class IntroSection
     {
         public string Title { get; set; }
         public string ImageStyles { get; set; }
         public string Excerpt { get; set; }
     }
 
-    public struct LinksSection
+    public class LinksSection
     {
         public string Title { get; set; }
         public IEnumerable<Link> Links { get; set; }
     }
 
-    public struct Link
+    public class Link
     {
         public string Label { get; set; }
         public string Url { get; set; }
