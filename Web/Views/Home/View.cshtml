@@ -1,5 +1,25 @@
-@model KickSharp.Routes.Home.ViewModel
-<div class="home-page">
-  <h1 class="home-page__title" >@Model.Title</h1>
-  <h2 class="home-page__subtitle" >@Model.Subtitle</h2>
+@using Kicksharp.Views.Home
+@model Kicksharp.Views.Home.ViewModel
+<div class="homepage">
+  <section class="homepage__header-section" style=@Model.HeaderSection.ImageStyles >
+    <h1 class="homepage__header-title"> @Model.HeaderSection.Title </h1>
+    <h2 class="homepage__header-subtitle"> @Model.HeaderSection.Subtitle </h2>
+    <button class="homepage__header-cta"> @Model.HeaderSection.CtaLabel </button>
+  </section>
+  <section class="homepage__intro-section">
+    <h3 class="homepage__intro-title"> @Model.IntroSection.Title </h3>
+    <div class="homepage__intro-image" style=@Model.IntroSection.ImageStyles></div>
+    <p class="homepage__intro-excerpt"> @Model.IntroSection.Excerpt </p>
+  </section>
+  <section class="homepage__links-section">
+    <h3 class="homepage__links-title"> @Model.LinksSection.Title </h3>
+    <ul class="homepage__links-list">
+      @foreach (Link link in @Model.LinksSection.Links )
+      {
+        <li class="homepage__links-list-item">
+          <a class="homepage__links-link" href=@link.Url> @link.Label </a>
+        </li>
+      }
+    </ul>
+  </section>
 </div>

@@ -1,0 +1,21 @@
+{
+    "HeaderSection": {
+        "ImageStyles": "background-image: url(https://www.onenorth.com/images/home/4O2A4258.jpg)",
+        "Title": "One North",
+        "Subtitle": "Every Interaction Matters",
+        "CtaLabel": "Learn More"
+    },
+    "IntroSection": {
+        "Title": "Digital The Makes an Impact",
+        "Excerpt": "We combine our brightest minds, vertical expertise and hunger for the extra-ordinary to craft digital experiences that nurture your most important relationships … and we have a lot of fun doing it.",
+        "ImageStyles": "background-image: url(https://www.onenorth.com/images/home/4O2A4055.jpg)"
+    },
+    "LinksSection": {
+        "Title": "Where to Next?",
+        "Links": [
+            { "Label": "Work", "Url": "/work" },
+            { "Label": "Ideas", "Url": "/blog" },
+            { "Label": "About", "Url": "/about" }
+        ]
+    }
+}

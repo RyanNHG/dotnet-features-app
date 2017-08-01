@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace KickSharp.Routes.About
+namespace Kicksharp.Views.About
 {
     public class AboutController : Microsoft.AspNetCore.Mvc.Controller
     {

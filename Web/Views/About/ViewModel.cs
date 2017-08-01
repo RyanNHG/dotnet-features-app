@@ -1,4 +1,4 @@
-namespace KickSharp.Routes.About
+namespace Kicksharp.Views.About
 {
     public class ViewModel
     {

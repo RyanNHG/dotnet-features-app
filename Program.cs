@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace KickSharp
+namespace Kicksharp
 {
     public class Program
     {
@@ -11,7 +11,7 @@ namespace KickSharp
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseUrls("http://0.0.0.0:5000")
-                .UseStartup<KickSharp.Config.Startup>()
+                .UseStartup<Kicksharp.Config.Startup>()
                 .Build();
 
             host.Run();

@@ -5,14 +5,19 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace KickSharp.Config
+using Kicksharp.Services;
+using Mock = Kicksharp.Services.Mock;
+
+namespace Kicksharp.Config
 {
     public class Startup
     {
         public IConfigurationRoot Configuration { get; set; }
+        private IHostingEnvironment HostingEnv { get; set;}
 
         public Startup(IHostingEnvironment env)
         {
+            this.HostingEnv = env;
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 // .AddJsonFile("appsettings.json")
@@ -41,6 +46,11 @@ namespace KickSharp.Config
 
                     options.ViewLocationExpanders.Add(new FeatureViewLocationExpander());
                 });
+
+            if (HostingEnv.IsDevelopment())
+            {
+                InjectMockServices(services, new Mock.Mocker(this.HostingEnv.ContentRootPath));
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +71,13 @@ namespace KickSharp.Config
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
 
+        }
+
+        private void InjectMockServices (IServiceCollection services, Mock.IMocker mocker)
+        {
+            services
+                .AddSingleton<Mock.IMocker>(mocker)
+                .AddTransient<ISettingsService, Mock.SettingsService>();
         }
     }
 }

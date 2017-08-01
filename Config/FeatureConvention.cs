@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
-namespace KickSharp.Config
+namespace Kicksharp.Config
 {
     internal class FeatureConvention : IControllerModelConvention
     {

@@ -5,6 +5,7 @@ services:
       context: .
       dockerfile: ./docker/Web.Dockerfile
     environment:
+      - ASPNETCORE_ENVIRONMENT=Development
       - DOTNET_USE_POLLING_FILE_WATCHER=true
     ports:
       - 5000:5000
@@ -13,6 +14,7 @@ services:
       - ./Program.cs:/usr/src/app/Program.cs
       - ./Config:/usr/src/app/Config
       - ./Web:/usr/src/app/Web
+      - ./Services:/usr/src/app/Services
       - ./wwwroot:/usr/src/app/wwwroot
   builder:
     build:
@@ -21,6 +23,5 @@ services:
     volumes:
       - ./package.json:/usr/src/app/package.json
       - ./gulpfile.js:/usr/src/app/gulpfile.js
-      - ./Web:/usr/src/app/Web
       - ./styles:/usr/src/app/styles
       - ./wwwroot:/usr/src/app/wwwroot
