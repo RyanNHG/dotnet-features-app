@@ -11,7 +11,7 @@ namespace Kicksharp
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseUrls("http://0.0.0.0:5000")
-                .UseStartup<Kicksharp.Config.Startup>()
+                .UseStartup<Kicksharp.Web.Config.Startup>()
                 .Build();
 
             host.Run();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Razor;
 
-namespace Kicksharp.Config
+namespace Kicksharp.Web.Config
 {
     public class FeatureViewLocationExpander : IViewLocationExpander
     {

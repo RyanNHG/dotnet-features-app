@@ -6,26 +6,26 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Collections;
 
-namespace Kicksharp.Services.Mock
+namespace Kicksharp.Logic.Json
 {
     public class Mocker : IMocker
     {
-        private const string mockJsonFolder = "Services/Mock/Json";
+        private const string mockJsonFolder = "Logic.Json/Json";
         private string pathPrefix;
-        private bool crashOnNullJson;
+        private bool throwExceptionOnInvalidJson;
 
-        private class KicksharpException : System.Exception
+        private class InvalidJsonException : System.Exception
         {
-            public KicksharpException(string str) : base(str)
+            public InvalidJsonException(string str) : base(str)
             {
 
             }
         }
 
-        public Mocker(string rootDirectory, bool crashOnNullJson = true)
+        public Mocker(string rootDirectory, bool throwExceptionOnInvalidJson = true)
         {
             this.pathPrefix = Path.Combine(rootDirectory, mockJsonFolder);
-            this.crashOnNullJson = crashOnNullJson;
+            this.throwExceptionOnInvalidJson = throwExceptionOnInvalidJson;
         }
 
         public string GetPathPrefix()
@@ -46,12 +46,12 @@ namespace Kicksharp.Services.Mock
             if (nullProperties.Any())
             {
                 string message = System.String.Join("\n", nullProperties
-                    .Select(str => "\t- " + str + "\n")
-                    .Prepend("These properties are missing from '" + filename + "':"));
+                    .Select(str => "\t- " + str)
+                    .Prepend("\nThese properties are missing from '" + filepath + "':"));
 
-                if (crashOnNullJson)
+                if (throwExceptionOnInvalidJson)
                 {
-                    throw new KicksharpException(message);
+                    throw new InvalidJsonException(message);
                 }
                 else
                 {

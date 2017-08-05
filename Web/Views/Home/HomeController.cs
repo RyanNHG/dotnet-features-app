@@ -1,22 +1,26 @@
-using Kicksharp.Services;
-using Microsoft.AspNetCore.Mvc;
+using Mvc = Microsoft.AspNetCore.Mvc;
+using Models = Kicksharp.Logic.Models;
+using Services = Kicksharp.Logic.Services;
 
-namespace Kicksharp.Views.Home
+namespace Kicksharp.Web.Views.Home
 {
-    public class HomeController : Microsoft.AspNetCore.Mvc.Controller
+    public class HomeController : Mvc.Controller
     {
-        private ISettingsService settingsService;
+        private Services.ISettings settingsService;
 
-        public HomeController (ISettingsService settingsService)
+        public HomeController (Services.ISettings settingsService)
         {
             this.settingsService = settingsService;
         }
         
-        public IActionResult Index()
+        public Mvc.IActionResult Index()
         {
-            var model = this.settingsService.GetHomepage();
+            Models.IHomepageSettings homepageSettings =
+                this.settingsService.GetHomepage();
 
-            return View(model);
+            ViewModel viewModel = new ViewModel(homepageSettings);
+
+            return View(viewModel);
         }
     }
 }

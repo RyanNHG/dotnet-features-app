@@ -5,10 +5,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-using Kicksharp.Services;
-using Mock = Kicksharp.Services.Mock;
+using Services = Kicksharp.Logic.Services;
+using Json = Kicksharp.Logic.Json;
 
-namespace Kicksharp.Config
+namespace Kicksharp.Web.Config
 {
     public class Startup
     {
@@ -49,7 +49,7 @@ namespace Kicksharp.Config
 
             if (HostingEnv.IsDevelopment())
             {
-                InjectMockServices(services, new Mock.Mocker(this.HostingEnv.ContentRootPath));
+                InjectMockServices(services, new Json.Mocker(this.HostingEnv.ContentRootPath, false));
             }
         }
 
@@ -73,11 +73,11 @@ namespace Kicksharp.Config
 
         }
 
-        private void InjectMockServices (IServiceCollection services, Mock.IMocker mocker)
+        private void InjectMockServices (IServiceCollection services, Json.IMocker mocker)
         {
             services
-                .AddSingleton<Mock.IMocker>(mocker)
-                .AddTransient<ISettingsService, Mock.SettingsService>();
+                .AddSingleton<Json.IMocker>(mocker)
+                .AddTransient<Services.ISettings, Json.Services.Settings>();
         }
     }
 }

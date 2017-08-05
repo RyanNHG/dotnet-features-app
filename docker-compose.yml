@@ -12,9 +12,9 @@ services:
     volumes:
       - ./project.csproj:/usr/src/app/project.csproj
       - ./Program.cs:/usr/src/app/Program.cs
-      - ./Config:/usr/src/app/Config
       - ./Web:/usr/src/app/Web
-      - ./Services:/usr/src/app/Services
+      - ./Logic:/usr/src/app/Logic
+      - ./Logic.Json:/usr/src/app/Logic.Json
       - ./wwwroot:/usr/src/app/wwwroot
   builder:
     build:

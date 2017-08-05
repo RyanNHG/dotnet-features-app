@@ -1,4 +1,4 @@
-namespace Kicksharp.Services.Mock
+namespace Kicksharp.Logic.Json
 {
     public interface IMocker
     {
