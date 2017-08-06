@@ -47,7 +47,7 @@ namespace Kicksharp.Logic.Json
             {
                 string message = System.String.Join("\n", nullProperties
                     .Select(str => "\t- " + str)
-                    .Prepend("\nThese properties are missing from '" + filepath + "':"));
+                    .Prepend("\nThese properties are missing from '" + filename + "':"));
 
                 if (throwExceptionOnInvalidJson)
                 {

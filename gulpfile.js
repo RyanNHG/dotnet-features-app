@@ -5,11 +5,11 @@ const series = require('run-sequence')
 
 const paths = {
   del: [
-    'wwwroot/main.css'
+    'Web/public'
   ],
   styles: {
-    src: 'styles/**/*.scss',
-    dest: 'wwwroot'
+    src: 'Web/styles/**/*.scss',
+    dest: 'Web/public'
   }
 }
 

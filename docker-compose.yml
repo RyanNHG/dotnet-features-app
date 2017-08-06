@@ -15,7 +15,6 @@ services:
       - ./Web:/usr/src/app/Web
       - ./Logic:/usr/src/app/Logic
       - ./Logic.Json:/usr/src/app/Logic.Json
-      - ./wwwroot:/usr/src/app/wwwroot
   builder:
     build:
       context: .
@@ -23,5 +22,4 @@ services:
     volumes:
       - ./package.json:/usr/src/app/package.json
       - ./gulpfile.js:/usr/src/app/gulpfile.js
-      - ./styles:/usr/src/app/styles
-      - ./wwwroot:/usr/src/app/wwwroot
+      - ./Web:/usr/src/app/Web

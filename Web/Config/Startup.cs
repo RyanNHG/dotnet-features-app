@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 
 using Services = Kicksharp.Logic.Services;
 using Json = Kicksharp.Logic.Json;
+using Microsoft.Extensions.FileProviders;
 
 namespace Kicksharp.Web.Config
 {
@@ -49,7 +50,7 @@ namespace Kicksharp.Web.Config
 
             if (HostingEnv.IsDevelopment())
             {
-                InjectMockServices(services, new Json.Mocker(this.HostingEnv.ContentRootPath, false));
+                InjectMockServices(services, new Json.Mocker(this.HostingEnv.ContentRootPath));
             }
         }
 
@@ -69,6 +70,13 @@ namespace Kicksharp.Web.Config
             }
 
             app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(
+                    System.IO.Path.Combine(this.HostingEnv.ContentRootPath, @"Web/public")
+                ),
+                RequestPath = new PathString("/public")
+            });
             app.UseMvcWithDefaultRoute();
 
         }
