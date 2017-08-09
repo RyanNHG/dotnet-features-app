@@ -1,11 +1,14 @@
 @using Kicksharp.Web.Views.Home
 @using Kicksharp.Logic.Types
 @model Kicksharp.Web.Views.Home.ViewModel
-<div class="homepage" style="@Model.HeaderSection.ImageStyles">
-  <section class="homepage__header-section" >
-    <h1 class="homepage__header-title"> @Model.HeaderSection.Title </h1>
-    <h2 class="homepage__header-subtitle"> @Model.HeaderSection.Subtitle </h2>
-    <button class="homepage__header-cta"> @Model.HeaderSection.CtaLabel </button>
+<div class="homepage">
+  <div class="homepage__navbar-strip"></div>
+  <section class="homepage__header-section" style="@Model.HeaderSection.ImageStyles">
+    <div class="homepage__header-overlay">
+      <h1 class="homepage__header-title"> @Model.HeaderSection.Title </h1>
+      <h2 class="homepage__header-subtitle"> @Model.HeaderSection.Subtitle </h2>
+      <button class="homepage__header-cta"> @Model.HeaderSection.CtaLabel </button>
+    </div>
   </section>
   <section class="homepage__intro-section">
     <h3 class="homepage__intro-title"> @Model.IntroSection.Title </h3>

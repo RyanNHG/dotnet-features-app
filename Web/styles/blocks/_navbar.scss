@@ -1,0 +1,47 @@
+.navbar {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    background-color: #333;
+
+    &--transparent {
+        background-color: rgba(0,0,0,0);
+    }
+
+    &__brand-link, &__link {
+        transform: scale(1);
+        transition: transform .3s;     
+        &:hover, &:focus {
+            opacity: .6;
+            transform: scale(1.1);
+        }
+    }
+
+    &__brand-link {
+        max-height: 50px;
+    }
+
+    &__brand-logo {
+        height: 100%;
+    }
+
+    &__links {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__link {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.25rem;
+        color: white;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+    }
+}

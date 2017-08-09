@@ -1,20 +1,35 @@
 .homepage {
     $red: #cd1820;
     $gray: #333;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+
+    &__navbar-strip {
+        background-color: #333;
+        height: 50px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+    }
 
     &__header-section {
-        background-color: rgba(30, 30, 30, .8);
+        position: relative;
+        z-index: 1;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
         color: white;
+        text-transform: uppercase;
+        text-shadow: black 0 2px 4px;
+    }
+
+    &__header-overlay {
+        background-color: rgba(30, 30, 30, .8);
+        width: 100%;
+        padding: 20vh 1rem;
+        padding-top: 30vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 20vh 1rem;
-        padding-top: 30vh;
-        text-transform: uppercase;
-        text-shadow: black 0 2px 4px;
     }
 
     &__header-title {

@@ -5,13 +5,13 @@ using Utilities = Kicksharp.Web.Utilities;
 
 namespace Kicksharp.Web.Views.Home
 {
-    public class ViewModel
+    public class ViewModel : Web.Views.ViewModel
     {
         public HeaderSection HeaderSection { get; set; }
         public IntroSection IntroSection { get; set; }
         public Types.LinksSection LinksSection { get; set; }
 
-        public ViewModel (Models.IHomepageSettings settings)
+        public ViewModel(Models.IGlobalSettings globalSettings, Models.IHomepageSettings settings) : base(globalSettings, true)
         {
             this.HeaderSection = new HeaderSection(settings.HeaderSection);
             this.IntroSection = new IntroSection(settings.IntroSection);
@@ -26,7 +26,7 @@ namespace Kicksharp.Web.Views.Home
         public string Subtitle { get; set; }
         public string CtaLabel { get; set; }
 
-        public HeaderSection (Types.HeaderSection section)
+        public HeaderSection(Types.HeaderSection section)
         {
             this.ImageStyles = Utilities.Images.BackgroundUrlStyle(section.ImageUrl);
             this.Title = section.Title;
@@ -41,7 +41,7 @@ namespace Kicksharp.Web.Views.Home
         public string ImageStyles { get; set; }
         public string Excerpt { get; set; }
 
-        public IntroSection (Types.IntroSection section)
+        public IntroSection(Types.IntroSection section)
         {
             this.Title = section.Title;
             this.ImageStyles = Utilities.Images.BackgroundUrlStyle(section.ImageUrl);

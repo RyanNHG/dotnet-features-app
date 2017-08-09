@@ -1,0 +1,19 @@
+{
+    "NavbarSettings": {
+        "LogoUrl": "https://www.onenorth.com/images/One_North_Horizontal.svg",
+        "Links": [
+            {
+                "Url": "/work",
+                "Label": "Work"
+            },
+            {
+                "Url": "/about",
+                "Label": "About"
+            },
+            {
+                "Url": "/blog",
+                "Label": "Blog"
+            }
+        ]
+    }
+}

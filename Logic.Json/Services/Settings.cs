@@ -15,5 +15,10 @@ namespace Kicksharp.Logic.Json.Services
         {
             return mocker.GetJson<Models.HomepageSettings>("homepage-settings.json");
         }
+
+        public Logic.Models.IGlobalSettings GetGlobal()
+        {
+            return mocker.GetJson<Models.GlobalSettings>("global-settings.json");
+        }
     }
 }

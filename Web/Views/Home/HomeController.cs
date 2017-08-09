@@ -15,10 +15,10 @@ namespace Kicksharp.Web.Views.Home
         
         public Mvc.IActionResult Index()
         {
-            Models.IHomepageSettings homepageSettings =
-                this.settingsService.GetHomepage();
+            var globalSettings = this.settingsService.GetGlobal();
+            var homepageSettings = this.settingsService.GetHomepage();
 
-            ViewModel viewModel = new ViewModel(homepageSettings);
+            ViewModel viewModel = new ViewModel(globalSettings, homepageSettings);
 
             return View(viewModel);
         }

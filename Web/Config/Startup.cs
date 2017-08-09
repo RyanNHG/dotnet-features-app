@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using Services = Kicksharp.Logic.Services;
 using Json = Kicksharp.Logic.Json;
 using Microsoft.Extensions.FileProviders;
+using Kicksharp.Logic.Services;
 
 namespace Kicksharp.Web.Config
 {
@@ -77,6 +78,7 @@ namespace Kicksharp.Web.Config
                 ),
                 RequestPath = new PathString("/public")
             });
+
             app.UseMvcWithDefaultRoute();
 
         }

@@ -1,0 +1,12 @@
+@model Kicksharp.Web.Views.Shared.Navbar
+<nav class="navbar @Model.ModifierClass">
+    <a class="navbar__brand-link" href="/">
+        <img class="navbar__brand-logo" alt="Home" src="@Model.LogoUrl" />
+    </a>
+    <div class="navbar__links">
+        @foreach (Types.Link link in Model.Links)
+        {
+            <a class="navbar__link" href="@link.Url"> @link.Label </a>
+        }
+    </div>
+</nav>
