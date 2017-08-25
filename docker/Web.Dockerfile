@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:latest
+FROM microsoft/dotnet:1-sdk
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
