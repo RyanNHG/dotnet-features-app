@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/Web.Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_USE_POLLING_FILE_WATCHER=true
+    ports:
+      - 5000:5000
+    volumes:
+      - ./Kicksharp.sln:/usr/src/app/Kicksharp.sln
+      - ./Web:/usr/src/app/Web
+      - ./Logic:/usr/src/app/Logic

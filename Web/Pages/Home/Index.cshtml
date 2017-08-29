@@ -1,0 +1,17 @@
+﻿@model Kicksharp.Web.Pages.Home.ViewModel
+<div class="homepage">
+    <section class="hero">
+        <h1 class="hero__title">@Model.Title</h1>
+        <h2 class="hero__subtitle">@Model.Subtitle</h2>
+    </section>
+    <section class="features">
+    	<ul class="features__list">
+		@foreach(var feature in @Model.Features)
+		{
+			<li class="feature__list-item">
+				<a class="feature__link" href="@feature.Url">@feature.Label</a>   
+			</li>
+		}
+        </ul>
+    </section>
+</div>

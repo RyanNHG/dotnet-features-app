@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{BF59C590-375F-42D1-9348-7CA6381236E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{DDA55AF2-D259-44E0-A64E-13D7A48FE66A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF59C590-375F-42D1-9348-7CA6381236E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF59C590-375F-42D1-9348-7CA6381236E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF59C590-375F-42D1-9348-7CA6381236E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF59C590-375F-42D1-9348-7CA6381236E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDA55AF2-D259-44E0-A64E-13D7A48FE66A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA55AF2-D259-44E0-A64E-13D7A48FE66A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA55AF2-D259-44E0-A64E-13D7A48FE66A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA55AF2-D259-44E0-A64E-13D7A48FE66A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
