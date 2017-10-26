@@ -74,22 +74,17 @@ Name | Description
 --- | ---
 `/project.csproj` | Lists project dependencies (Equivalent of `package.json` in NodeJS)
 `/Program.cs` | Entrypoint to application
- | 
 `/Web/Config` | Configuration for MVC application
 `/Web/styles` | The SCSS project.
 `/Web/Utilities` | Reusable utilities for transforming domain models to view models.
 `/Web/Views` | All frontend routes (contains controllers, views, and view models).
- | 
 `/Logic/Models` | All domain model interfaces.
 `/Logic/Services` | All service interfaces.
 `/Logic/Types` | Data structures used in domain models.
- | 
 `/Logic.<Implementation>/Models` | Implementation of domain model interfaces.
 `/Logic.<Implementation>/Services` | Implementation of service interfaces.
- | 
 `/Data/Models` | All persistence model interfaces.
 `/Data/Repos` | All repositories and repository interfaces.
- | 
 `/Data.<Implementation>/Models` | Implementation of persistence model interfaces.
 `/Data.<Implementation>/Repos` | Implementation of repositories and repository interfaces.
 
